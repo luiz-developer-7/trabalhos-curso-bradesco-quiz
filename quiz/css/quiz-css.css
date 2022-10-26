@@ -12,6 +12,19 @@ h2{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#pontuacao{
+    text-align: center;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(255, 94, 0);
+    color:white;
+    padding: 5px;
+    width: 20%;
+    margin-left: 40%;
+    border-radius: 15px;
+    
+}
+
 .bloco-pergunta{
     background-color: #cdeef9;
     padding: 5px;
