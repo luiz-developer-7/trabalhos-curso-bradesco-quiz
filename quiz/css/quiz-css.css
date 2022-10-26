@@ -1,5 +1,6 @@
 body{
     background-color: rgb(255, 255, 255);
+    min-width: 900px;
 }
 h1{
     text-align: center;
@@ -14,8 +15,8 @@ h2{
 .bloco-pergunta{
     background-color: #cdeef9;
     padding: 5px;
-    margin-left: 300px;
-    margin-right: 300px;
+    width: 50%;
+    margin-left: 25%;
     border-radius: 15px;
 }
 
@@ -48,6 +49,7 @@ button{
     margin: 5px;
 }
 
+
 .btn-respostas{
     
     display: flex;
@@ -60,4 +62,14 @@ button{
     border-radius: 15px;
     
     
+}
+
+#btn-comecar{
+    width: 20%;
+    margin-left: 40%;
+    background-color: rgb(25, 89, 110);
+    color: white;
+    border-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
 }
