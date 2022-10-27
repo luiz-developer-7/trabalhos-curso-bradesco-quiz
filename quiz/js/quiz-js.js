@@ -15,19 +15,23 @@ var score = 0;
 
 //Array com as respostas da pergunta 1
 var resposta1 = ["765 Gols","1006 Gols","1195 Gols","972 Gols"]
-var gabarito1 = "765 Gols";
+const gabarito1 = "765 Gols";
 
 //Array com as respostas da pergunta 2
 var resposta2 = ["1990","1994","1998","2002"]
+const gabarito2 = "1994";
 
 //Array com as respostas da pergunta 3
 var resposta3 = ["10","6","7","9"]
+const gabarito3 = "10";
 
 //Array com as respostas da pergunta 4
 var resposta4 = ["35km/h","44km/h","60km/h","50km/h"]
+const gabarito4 = "44km/h";
 
 //Array com as respostas da pergunta 5
 var resposta5 = ["3 Títulos","4 Títulos","5 Títulos","6 Títulos"]
+const gabarito5 = "5 Títulos";
 
 //Array para embaralhar a ordem das perguntas
 var ordemperguntas = [1,2]
@@ -46,7 +50,7 @@ shuffle(resposta4);
 
 shuffle(resposta5);
 
-//Quando o usuário apertar o botão comecar aparece um pergunta
+//Quando o usuário apertar o botão comecar aparece uma pergunta
 document.getElementById("btn-comecar").onclick = function() {start()};
 
 function start() {
@@ -129,6 +133,23 @@ function shuffle(array) {
   }
 //-------------------------------------------------------------
   
- 
+
+// Localiza Onde em cada Array está a resposta correta --------
+let index1 = resposta1.indexOf(gabarito1);
+console.log(index1);
+
+let index2 = resposta2.indexOf(gabarito2);
+console.log(index2);
+
+let index3 = resposta3.indexOf(gabarito3);
+console.log(index3);
+
+let index4 = resposta4.indexOf(gabarito4);
+console.log(index4);
+
+let index5 = resposta5.indexOf(gabarito5);
+console.log(index5);
+
+//--------------------------------------------------------------
 
   
