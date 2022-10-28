@@ -38,6 +38,19 @@ h2{
     
 }
 
+#verificacaoresposta{
+    text-align: center;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(8, 8, 2);
+    color:rgb(255, 255, 255);
+    padding: 10px;
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 15px;
+    
+}
+
 .bloco-pergunta{
     background-color: #cdeef9;
     padding: 5px;
@@ -85,8 +98,8 @@ button:focus{background-color:grey;}
     align-items: center;
     background-color:rgb(255, 255, 255);
     padding: 5px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
     border-radius: 15px;
     
     

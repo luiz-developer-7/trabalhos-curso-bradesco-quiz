@@ -9,9 +9,15 @@ document.getElementById('pontuacao').style.display = "none";
 
 document.getElementById('proximo').style.display = "none";
 
+document.getElementById('verificacaoresposta').style.display = "none";
+
 var contadorperguntas = 0;
 
 var score = 0;
+
+var cliques = 0;
+
+var cliquesproximo = 0;
 
 //Array com as respostas da pergunta 1
 var resposta1 = ["765 Gols","1006 Gols","1195 Gols","972 Gols"]
@@ -34,13 +40,13 @@ var resposta5 = ["3 Títulos","4 Títulos","5 Títulos","6 Títulos"]
 const gabarito5 = "5 Títulos";
 
 //Array para embaralhar a ordem das perguntas
-var ordemperguntas = [1,2]
+var ordemperguntas = [1,2,3,4,5]
 
 //Chama a função para embaralhar as perguntas
 shuffle(ordemperguntas);
 
 //Chama a função de embaralhar as respostas
-//shuffle(resposta1);
+shuffle(resposta1);
 
 shuffle(resposta2);
 
@@ -50,6 +56,16 @@ shuffle(resposta4);
 
 shuffle(resposta5);
 
+//Quando o usuário apertar o botão próximo soma 1 a variavel cliques proximo
+document.getElementById("proximo").onclick = function() {next()};
+
+function next()
+{
+    cliquesproximo = cliquesproximo+1;
+    console.log(cliquesproximo);
+}
+//--------------------------------------------------------------------------
+
 //Quando o usuário apertar o botão comecar aparece uma pergunta
 document.getElementById("btn-comecar").onclick = function() {start()};
 
@@ -57,8 +73,11 @@ function start() {
     //Esconde o início e mostra o placar
     document.getElementById('inicio').style.display = "none";
     document.getElementById('pontuacao').style.display = "block"; 
-
+    //Mostra o painel que verifica se a resposta está certa ou errada
+    document.getElementById('verificacaoresposta').style.display = "block";
+    //Mostra o botão de ir para a próxima pergunta
     document.getElementById('proximo').style.display = "block";
+
     
 
     //Coloca as respostas embaralhadas nos respectivos botões 
@@ -89,26 +108,63 @@ function start() {
 
     //-------------------------------------------------------
 
-    if(ordemperguntas[0]===1){
+   
+    if(cliquesproximo===0)
+    {   console.log("clk0");
+        if(ordemperguntas[0]===1)
+        {
+        document.getElementById('q1').style.display = "block";
+        } 
+        if(ordemperguntas[0]===2)
+        {
+        document.getElementById('q2').style.display = "block";
+        } 
+        if(ordemperguntas[0]===3)
+        {
+        document.getElementById('q3').style.display = "block";
+        } 
+        if(ordemperguntas[0]===4)
+        {
+        document.getElementById('q4').style.display = "block";
+        } 
+        if(ordemperguntas[0]===5)
+        {
+        document.getElementById('q5').style.display = "block";
+        } 
+    }
+  
 
-    document.getElementById('q1').style.display = "block";
-    document.getElementById('q2').style.display = "none";
-    document.getElementById('q3').style.display = "none";
-    document.getElementById('q4').style.display = "none";
-    document.getElementById('q5').style.display = "none";
+    if(cliquesproximo===1)
+    {   console.log("clk1");
+        if(ordemperguntas[1]===1)
+        {
+        document.getElementById('q1').style.display = "block";
+        } 
+        if(ordemperguntas[1]===2)
+        {
+        document.getElementById('q2').style.display = "block";
+        } 
+        if(ordemperguntas[1]===3)
+        {
+        document.getElementById('q3').style.display = "block";
+        } 
+        if(ordemperguntas[1]===4)
+        {
+        document.getElementById('q4').style.display = "block";
+        } 
+        if(ordemperguntas[1]===5)
+        {
+        document.getElementById('q5').style.display = "block";
+        } 
     }
 
-    if(ordemperguntas[0]===2){
+    
+  
 
-    document.getElementById('q1').style.display = "none";
-    document.getElementById('q2').style.display = "block";
-    document.getElementById('q3').style.display = "none";
-    document.getElementById('q4').style.display = "none";
-    document.getElementById('q5').style.display = "none";
-    }
     
     
 }
+
 
 
 
@@ -132,6 +188,8 @@ function shuffle(array) {
     return array;
   }
 //-------------------------------------------------------------
+
+
   
 
 // Localiza Onde em cada Array está a resposta correta --------
@@ -152,23 +210,43 @@ console.log(index5);
 
 //--------------------------------------------------------------
 
+
+//Essa função retorna a classe do botão que foi apertado que vai de 0 a 3
 function reply_click(clicked_class)
 {
     console.log(clicked_class);
+
+    //Transforma o valor da classe clicada em um número para poder ser comparado
     numerobotao = Number(clicked_class);
     
+    //Confere se quem está sendo exibido é a pergunta 1
     if(q1.style.display === "block")
-    {
-        console.log("display");
-        console.log(index1);
-        console.log(clicked_class);
+    {   
+        //Confere se o botão clicado é igual onde está a resposta no array index
         if(numerobotao===index1)
-        {
+        {   //Caso positivo mostra que a resposta está correta
             console.log("resposta correta");
+            document.getElementById("verificacaoresposta").innerHTML = "A resposta está: Certa";
+            document.getElementById("verificacaoresposta").style.backgroundColor = "green";
+            
+            //Dá 5 pontos caso a pessoa acerte de primeira
+            if(cliques===0)
+            {
+                score=score+5;
+                cliques = cliques +1;
+                document.getElementById("pontuacao").innerHTML = score;
+                
+            }
+  
         }
         else
-        {
+        {   //Caso negativo mostra que a resposta está errada
             console.log("Resposta Errada")
+            document.getElementById("verificacaoresposta").innerHTML = "A resposta está: Errada";
+            document.getElementById("verificacaoresposta").style.backgroundColor = "red";
+            document.getElementById("pontuacao").innerHTML = score;
+            cliques=cliques+1;
+            
         }
     }
 }
