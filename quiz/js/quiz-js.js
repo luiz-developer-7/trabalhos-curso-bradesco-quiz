@@ -63,6 +63,61 @@ function next()
 {
     cliquesproximo = cliquesproximo+1;
     console.log(cliquesproximo);
+    document.getElementById('q1').style.display = "none";
+    document.getElementById('q2').style.display = "none";
+    document.getElementById('q3').style.display = "none";
+    document.getElementById('q4').style.display = "none";
+    document.getElementById('q5').style.display = "none";
+    
+  
+
+    if(cliquesproximo===1)
+    {   console.log("clk1");
+        if(ordemperguntas[1]===1)
+        {
+        document.getElementById('q1').style.display = "block";
+        } 
+        if(ordemperguntas[1]===2)
+        {
+        document.getElementById('q2').style.display = "block";
+        } 
+        if(ordemperguntas[1]===3)
+        {
+        document.getElementById('q3').style.display = "block";
+        } 
+        if(ordemperguntas[1]===4)
+        {
+        document.getElementById('q4').style.display = "block";
+        } 
+        if(ordemperguntas[1]===5)
+        {
+        document.getElementById('q5').style.display = "block";
+        } 
+    }
+
+    if(cliquesproximo===2)
+    {   console.log("clk2");
+        if(ordemperguntas[2]===1)
+        {
+        document.getElementById('q1').style.display = "block";
+        } 
+        if(ordemperguntas[2]===2)
+        {
+        document.getElementById('q2').style.display = "block";
+        } 
+        if(ordemperguntas[2]===3)
+        {
+        document.getElementById('q3').style.display = "block";
+        } 
+        if(ordemperguntas[2]===4)
+        {
+        document.getElementById('q4').style.display = "block";
+        } 
+        if(ordemperguntas[2]===5)
+        {
+        document.getElementById('q5').style.display = "block";
+        } 
+    }
 }
 //--------------------------------------------------------------------------
 
@@ -106,8 +161,8 @@ function start() {
     document.getElementById("r19").innerHTML = resposta5[2];
     document.getElementById("r20").innerHTML = resposta5[3];
 
-    //-------------------------------------------------------
-
+    //------------------------------------------------------
+    
    
     if(cliquesproximo===0)
     {   console.log("clk0");
@@ -131,38 +186,8 @@ function start() {
         {
         document.getElementById('q5').style.display = "block";
         } 
+        
     }
-  
-
-    if(cliquesproximo===1)
-    {   console.log("clk1");
-        if(ordemperguntas[1]===1)
-        {
-        document.getElementById('q1').style.display = "block";
-        } 
-        if(ordemperguntas[1]===2)
-        {
-        document.getElementById('q2').style.display = "block";
-        } 
-        if(ordemperguntas[1]===3)
-        {
-        document.getElementById('q3').style.display = "block";
-        } 
-        if(ordemperguntas[1]===4)
-        {
-        document.getElementById('q4').style.display = "block";
-        } 
-        if(ordemperguntas[1]===5)
-        {
-        document.getElementById('q5').style.display = "block";
-        } 
-    }
-
-    
-  
-
-    
-    
 }
 
 
