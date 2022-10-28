@@ -40,7 +40,7 @@ var ordemperguntas = [1,2]
 shuffle(ordemperguntas);
 
 //Chama a função de embaralhar as respostas
-shuffle(resposta1);
+//shuffle(resposta1);
 
 shuffle(resposta2);
 
@@ -152,4 +152,28 @@ console.log(index5);
 
 //--------------------------------------------------------------
 
-  
+function reply_click(clicked_class)
+{
+    console.log(clicked_class);
+    numerobotao = Number(clicked_class);
+    
+    if(q1.style.display === "block")
+    {
+        console.log("display");
+        console.log(index1);
+        console.log(clicked_class);
+        if(numerobotao===index1)
+        {
+            console.log("resposta correta");
+        }
+        else
+        {
+            console.log("Resposta Errada")
+        }
+    }
+}
+
+
+
+
+
